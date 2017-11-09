@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+  {% include google-analytics.html %}
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6057383724985413",
+    enable_page_level_ads: true
+  });
+</script>
+
+  <body class="{{ page.layout }}{% if page.url == '/' %} home{% endif %}">
+
+    {% include sidebar.html %}
+
+    <main class="container">
+      {{ content }}
+    </main>
+
+    {% include custom-foot.html %}
+  </body>
+</html>

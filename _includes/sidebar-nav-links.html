@@ -1,0 +1,12 @@
+<nav id="sidebar-nav-links">
+
+  {% if site.sidebar_blog_link %}
+    <a class="page-link {% if page.url == site.sidebar_blog_link %} active{% endif %}"
+	href="{{ site.baseurl }}{{ site.sidebar_blog_link }}">Blog</a>
+  {% endif %}
+
+  {% include page-links.html %}
+  {% include category-links.html %}
+
+  {% include custom-nav-links.html %}
+</nav>
