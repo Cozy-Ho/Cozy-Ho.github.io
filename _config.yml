@@ -5,7 +5,7 @@ highlighter:      rouge
 # Setup
 title:            Dev-ing
 tagline:          개발자가 되고싶어요
-description:      <small>글 목록및 댓글은 Archive에서.</small><br><a href="https://www.facebook.com/kubera97" target="_blank">FaceBook</a><br>kj2693119@gmail.com
+description:      <small>글 목록및 댓글은 Archive에서.</small><br><a href="https://www.instagram.com/kkang.zzu/" target="_blank">Instagram</a><br>kj2693119@gmail.com
 url:              https://cozy-ho.github.io
 baseurl:          # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
