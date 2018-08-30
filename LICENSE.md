@@ -3,14 +3,13 @@ layout: page
 title: LICENSE
 ---
 
-# Released under MIT License
+# Released under CCL
 
-Copyright (c) 2013 Mark Otto.
+## 이 저작물은 크리에이티브 커먼즈 저작자표시-비영리 4.0 국제 라이선스에 따라 이용할 수 있습니다.
+<br>
+저작자와 출처 등을 표시하면 저작물의 변경, 2차적 저작물의 작성을 포함한 자유이용을 허락합니다.<br>단 영리적 이용은 허용되지 않습니다.
+<br>
 
-Copyright (c) 2017 Andrew Fong.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+![CCL](https://github.com/Cozy-Ho/Cozy-Ho.github.io/blob/master/images/CCL_copyright.jpg?raw=true)
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
