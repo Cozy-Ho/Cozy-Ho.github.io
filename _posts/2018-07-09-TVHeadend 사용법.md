@@ -9,6 +9,10 @@ category: Server
 
 # Intro
 <br>
+이 포스트는 <a href="https://cozy-ho.github.io/server/2018/07/05/IPTV_ip%EC%A3%BC%EC%86%8C-%EC%8A%A4%EC%BA%94%ED%95%98%EA%B8%B0.html" target="_blank"> OMVP 설치 및 사용법 & IPTV 주소 스캔하기 </a>포스트에 의존합니다. 이전 포스트를 먼저 보시는걸 추천합니다.
+
+---
+
 `TVHeadend`란 IPTV나 TV 수신카드의 데이터를 재전송해, 다른 클라이언트(TV가 아닌)에서 TV시청이 가능하게 해주는 서비스이다.
 
 설치하기에앞서 우분투 컨테이너를 하나 생성해 준다. Host에 서비스들을 바로 설치하는건 보안상 좋지않기때문에 서비스별로 분리하는걸 기본으로 한다. 나는 `Ubuntu_server-16.04`를 설치했다.
