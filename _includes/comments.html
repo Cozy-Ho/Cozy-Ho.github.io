@@ -1,6 +1,15 @@
 {% if page.comments != false %}
-  <section class="comments">
-    <h2>Comments</h2>
-    {% include disqus.html %}
-  </section>
+<section class="comments">
+    <!-- <h2>Comments</h2>
+    {% include disqus.html %} -->
+    <script
+        src="https://utteranc.es/client.js"
+        repo="cozy-ho/cozy-ho.github.io"
+        issue-term="pathname"
+        label="Comment"
+        theme="preferred-color-scheme"
+        crossorigin="anonymous"
+        async
+    ></script>
+</section>
 {% endif %}
