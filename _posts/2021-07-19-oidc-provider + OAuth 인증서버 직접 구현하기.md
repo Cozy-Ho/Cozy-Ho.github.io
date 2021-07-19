@@ -1097,8 +1097,12 @@ app.get("/interaction/:uid/abort", setNoCache, async (req, res, next) => {
 
 정확한 코드 및 설명은 [https://github.com/panva/node-oidc-provider](https://github.com/panva/node-oidc-provider) 여기를 참고하고,
 
-본 포스팅은 [https://github.com/Cozy-Ho/oidc-provider](https://github.com/Cozy-Ho/oidc-provider) 여기를 참고하자
+본 포스팅은 [https://github.com/Cozy-Ho/oidc-provider](https://github.com/Cozy-Ho/oidc-provider) 여기를 참고하자. 해당 Repo를 clone해 와서 `yarn install` 후 `yarn start`하면 실행된다.
+
+서버는 기본 `8888`포트에서 돌고있고, 해당 인증서버에 요청을 보내는 client는 postman으로 해도 가능은 하지만, `Auth-code`인증방식은 테스트하기 복잡하기때문에 웬만하면 따로 만들어서 테스트 하는게 좋다. 구현 해 놓은 테스트용 client도 추가할까 했지만 테스트용 코드라 깔끔하지도 않고 양도 꽤 많아서 생략했다. 혹시 필요한 사람이 있다면 따로 공유하는걸로하고..
+
+기본적인 인증서버의 설정들은 `SERVER_IP:PORT/.well-known/openid-configuration` 접근해보면 사용가능한 endpoint들과 설정들이 json 형태로 출력되니 참고하자.
 
 진행도중 이상한 부분이나 질문은 댓글 남기면 내가 아는 범위에서는 도움을 줄 수 있지만, 큰 도움은 못 될 지도...
 
-대부분 구현된 인증서버를 사용하는 예시는 넘쳐나지만
+인증서버 구현은 해야하는데 볼 자료는 거지같은 프로젝트 공식 Git 문서와 더 거지같은 RFC 문서밖에 없어서 삽질 꽤나 했다. 대부분 구현된 서버를 이용하겠지만 혹시 직접 구현하고자 하는 누군가를 위해..! 화이팅.
