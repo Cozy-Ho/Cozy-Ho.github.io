@@ -1,6 +1,6 @@
 ---
 layout: post
-title: node-oidc-provider + OAuth 인증서버 직접 구현하기
+title: Nodejs로 OAuth 인증서버 구현하기 - oidc-provider
 date: 2021-07-19 14:42:23
 tags:
   - OAuth
