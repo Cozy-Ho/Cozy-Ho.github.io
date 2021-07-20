@@ -1,17 +1,17 @@
 ---
-layout: post
-title: Nodejs로 OAuth 인증서버 만들기 - oidc-provider
-date: 2021-07-19 14:42:23
-tags:
-  - OAuth
-  - 인증서버
-  - oidc-provider
-  - nodejs
-category: OAuth
+layout : post
+title : Nodejs로 OAuth 인증서버 만들기 with(oidc-provider)
+date : 2021-07-19 14:42:23
+tags :
+- OAuth
+- 인증서버
+- oidc-provider
+- nodejs
+category : OAuth
 ---
 
 # Intro
-
+<br>
 `OAuth` 인증과 `OpenID Connect` 에 관해 정리 하고 기본 개념을 확실하게 함과 동시에, 국내에 통합로그인 서비스를 끌어다 이용하는 샘플은 넘쳐나는 반면에 `OAuth` 서버를 직접 구현하는 예제는 찾아보기 힘들어, RFC 문서를 뒤져가며 삽질한 2달간의 수고로움을 다른사람들은 최대한 피해갔으면 하는 마음에 정리를 시작한다.
 
 이번 포스팅에서는 `node-oidc-provider` 라는 오픈소스 프로젝트를 사용하여 인증서버를 구현한다.
