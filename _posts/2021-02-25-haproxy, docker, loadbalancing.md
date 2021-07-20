@@ -1,30 +1,33 @@
 ---
-layout : post
-title : haproxy+docker로 loadbalancing 하기
-date : 2021-02-25 13:51:23
+layout: post
+title: haproxy, docker, loadbalancing
+date: 2021-02-25 13:51:23
 tags:
-- docker
+  - docker
 category: Server
 ---
 
 # Intro
+
 Docker를 통한 Loadbalancing은 사실 구글에서 만든 `Kubernetes` 라는 좋은 오픈소스가 있다. 하지만 LearningCurve 가 가파르고 진입장벽이 높아 입문자라면 시도해 보기 어렵기때문에 `HAProxy`와 Docker에서 기본으로 지원하는 `docker-swarm`을 사용했다. 만약 학습용이 아닌 실제 필드에 적용하려 한다면, `Kubernetes`를 추천한다.<br>
 `HAProxy`는 Reverse Proxy 로 동작한다. client로 부터 들어오는 요청을 server로 전달해주는 역할을 한다. 보통 Reverse Proxy는 기업에서 서버 보안을 위해 사용하지만 우리는 loadbalance를 구현하기위해 사용한다.<br>
 실습에 사용되는 코드와 예제는 <a href="https://github.com/Cozy-Ho/docker_practice/tree/main/haproxy_loadbalancing" target="_balnk">여기</a>에 올려두었다.
-
 
 ## Haproxy + Docker 로 Loadbalancing 하기
 
 index.js라는 파일에는 간단한 node 서버 코드를 작성 했다.
 
 ```js
-var http = require('http');
-var os = require('os');
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
+var http = require("http");
+var os = require("os");
+http
+  .createServer(function (req, res) {
+    res.writeHead(200, { "Content-Type": "text/html" });
     res.end(`<h1>I'm ${os.hostname()}</h1>`);
-}).listen(8080);
+  })
+  .listen(8080);
 ```
+
 <br>
 
 `Dockerfile` 이라는 이름으로 파일을 만들고 아래 코드를 작성했다.
@@ -47,28 +50,27 @@ CMD [ "node", "/usr/src/app/index" ]
 
 ## Docker-compose 사용하기
 
-
 ```yaml
-version: '3'
+version: "3"
 
 services:
   test:
-   image: test
-   ports:
-     - 8080
-   environment:
-     - SERVICE_PORTS=8080
-   deploy:
-     replicas: 20
-     update_config:
-       parallelism: 5
-       delay: 10s
-     restart_policy:
-       condition: on-failure
-       max_attempts: 3
-       window: 120s
-   networks:
-     - web
+    image: test
+    ports:
+      - 8080
+    environment:
+      - SERVICE_PORTS=8080
+    deploy:
+      replicas: 20
+      update_config:
+        parallelism: 5
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+        window: 120s
+    networks:
+      - web
 
   proxy:
     image: dockercloud/haproxy
@@ -93,7 +95,7 @@ networks:
 
 `docker-compose.yaml` 이라는 이름으로 파일을 만들고 위 코드를 작성한다.
 
->옵션 설명
+> 옵션 설명
 
 1. 첫 번째 서비스는 test Node.js 앱 이다. 조금 전에 빌드한 test 이미지로 실행된다.<br>8080 포트를 외부에 연결하고, 환경 변수로 SERVICE_PORTS로 작성했다.<br>deploy 옵션으로 20개의 복사본(replicas)을 만들고 업데이트 설정과 재시작 설정을 추가했다.<br>파일의 마지막에 작성한 network인 web 네트워크에 모든 컨테이너를 연결해둔 것이 가장 중요한 포인트.
 
@@ -111,7 +113,7 @@ networks:
 
 > $ docker swarm init
 
-네트워크, 서비스, 그리고 모든 컨테이너들을 `스택(stack)`이라고 부른다. 
+네트워크, 서비스, 그리고 모든 컨테이너들을 `스택(stack)`이라고 부른다.
 
 스택을 생성하기 위해서는 `docker stack` 명령어를 사용해야 하지만 스택을 `docker-compose.yml` 파일로 수행하고싶다. 그래야 우리가 설계한대로 진행해줄테니까.
 
@@ -119,7 +121,7 @@ networks:
 
 위의 명령어를 입력한다.
 
-`deploy` 명령으로 새로운 스택을 배포하고, `docker-compose.yaml`을 사용해 수행하기 위해서 `--compose-file` 플래그(flag)를 사용했다. 물론 이미 있는 스택을 업데이트할 때에도 명령을 사용할 수 있다. 마지막으로 스택에 `prod` 라는 이름을 붙인다. 
+`deploy` 명령으로 새로운 스택을 배포하고, `docker-compose.yaml`을 사용해 수행하기 위해서 `--compose-file` 플래그(flag)를 사용했다. 물론 이미 있는 스택을 업데이트할 때에도 명령을 사용할 수 있다. 마지막으로 스택에 `prod` 라는 이름을 붙인다.
 
 > $ curl http://localhost
 
@@ -137,13 +139,16 @@ networks:
 <br>
 
 ```js
-var http = require('http');
-var os = require('os');
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
+var http = require("http");
+var os = require("os");
+http
+  .createServer(function (req, res) {
+    res.writeHead(200, { "Content-Type": "text/html" });
     res.end(`<h1>I'm ${os.hostname()}!!!</h1>`);
-}).listen(8080);
+  })
+  .listen(8080);
 ```
+
 <br>
 
 > $ docker build -t test:v2 .
@@ -152,12 +157,11 @@ http.createServer(function (req, res) {
 
 서비스의 중단없이 `prod` 스택에 `test` 서비스를 `v2`로 교체하기 위해서는
 
-> $ docker service update --image test:v2 prod_test 
+> $ docker service update --image test:v2 prod_test
 
 위 명령을 사용한다.
 
 그러면 `docker-compose.yaml`에 명시한 업데이터 설정과 같이 각 5개의 컨테이너가 순차적으로 업데이트를 한다.
-
 
 만약 20개의 컨테이너보다 더 많이 필요하여 스케일을 키우고 싶다면
 
@@ -176,5 +180,3 @@ http.createServer(function (req, res) {
 swarm을 종료하기 위해서는 다음 명령어를 입력한다.
 
 > $ docker swarm leave --froce
-
-
