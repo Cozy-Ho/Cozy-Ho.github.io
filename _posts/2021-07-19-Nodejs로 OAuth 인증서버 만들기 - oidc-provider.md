@@ -7,7 +7,7 @@ tags :
 - 인증서버
 - oidc-provider
 - nodejs
-category : OAuth
+category : Server
 ---
 
 # Intro
