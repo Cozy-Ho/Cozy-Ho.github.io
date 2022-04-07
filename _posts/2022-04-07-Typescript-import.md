@@ -1,16 +1,16 @@
 ---
 layout : post
-title : Typescript "@" import 하기
-date : 2022-04-07 11:00:23
+title : Typescript @경로 import 하기
+date : 2022-04-07 11:00:01
 tags :
 - Typescript
-category : Typescript
 ---
 
 # Intro
 
 <br>
-Typescript 에서 module import 해올때 상대경로 `import "../../../something/dir"` 로 import 해오는 경우 경로 표기가 더러워지고, 코드 읽기가 힘들어지는 문제가 있다.
+
+Typescript 에서 module import 해올때 상대경로 `import "something/dir"` 로 import 해오는 경우 경로 표기가 더러워지고, 코드 읽기가 힘들어지는 문제가 있다.
 
 그래서 `@` 와 같은 symbol 을 통해 `import "@/dir"` 처럼 깔끔하게 import 해 오는 설정을 적용해 개발 생산성을 높여보자.
 
