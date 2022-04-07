@@ -4,7 +4,7 @@ highlighter: rouge
 
 # Setup
 title: Dev-ing
-tagline: 개발자가 되고싶어요
+tagline: 개발자가 이런거였어?
 description: <small>글 목록및 댓글은 Archive에서.</small><br><a href="https://www.instagram.com/kkang.zzu/" target="_blank">Instagram</a><br>kj2693119@gmail.com
 url: https://cozy-ho.github.io
 baseurl:
@@ -15,18 +15,18 @@ baseurl:
 # sidebar_blog_link below.
 
 author:
-    name: "Heo K.J"
-    email: "kj2693119@gmail.com"
-    url: https://cozy-ho.github.io
+  name: "Heo K.J"
+  email: "kj2693119@gmail.com"
+  url: https://cozy-ho.github.io
 
 paginate: 8
 # paginate_path:    '/page:num'
 # Or '/blog/page:num' if you want to move your index pages
 
 plugins:
-    - jekyll-feed
-    - jekyll-gist
-    - jekyll-paginate
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
 
 # Custom vars
 version: 3.4.1
@@ -36,4 +36,4 @@ sidebar_home_link: false
 # set this to the root of the paginate_path
 # to enable a separate blog link.
 github:
-    repo: https://github.com/Cozy-Ho/Cozy-Ho.github.io
+  repo: https://github.com/Cozy-Ho/Cozy-Ho.github.io

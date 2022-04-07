@@ -3,8 +3,8 @@ layout: post
 title: Typescript @ import 하기
 date: 2022-04-07 11:00:23
 tags:
-  - typescript
-category: typescript
+  - Typescript
+category: Typescript
 ---
 
 # Intro
