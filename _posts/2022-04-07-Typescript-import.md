@@ -18,7 +18,7 @@ Typescript 에서 module import 해올때 상대경로 `import "something/dir"` 
 
 먼저 해당 기능을 사용하기 위해서는 tsconfig 설정이 필요하다. 다짜고짜 "@" 기호를 사용하면 당연히 typscript compiler 가 못알아 먹는다.
 
-```json
+```ts
 {
   "compilerOptions": {
     // other typescript compile options here ...
@@ -38,7 +38,7 @@ Typescript 에서 module import 해올때 상대경로 `import "something/dir"` 
 
 해당 설정 이외에도 여러가지 입맛에 맞는 경로 설정이 가능하다. 예를들어
 
-```json
+```ts
 {
   "compilerOptions": {
     // other typescript compile options here ...
