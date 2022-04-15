@@ -1,9 +1,7 @@
 ---
-layout : post
-title : Typescript @경로 import 하기
-date : 2022-04-07 11:00:01
-tags :
-- Typescript
+layout: post
+title: Typescript @경로 import 하기
+date: 2022-04-07 11:00:01
 ---
 
 # Intro
