@@ -10,6 +10,10 @@ tags :
 category : Server
 ---
 
+> 만약 `Nestjs`, `Typescript` 를 사용한다면, [새로운 포스트](https://cozy-ho.github.io/server/2023/08/07/Typescript%EB%A1%9C-OAuth-%EC%9D%B8%EC%A6%9D%EC%84%9C%EB%B2%84-%EB%A7%8C%EB%93%A4%EA%B8%B0-oidc-provider.html) 를 작성했으니 확인 해 보자 
+
+---
+
 # Intro
 <br>
 `OAuth` 인증과 `OpenID Connect` 에 관해 정리 하고 기본 개념을 확실하게 함과 동시에, 국내에 통합로그인 서비스를 끌어다 이용하는 샘플은 넘쳐나는 반면에 `OAuth` 서버를 직접 구현하는 예제는 찾아보기 힘들어, RFC 문서를 뒤져가며 삽질한 2달간의 수고로움을 다른사람들은 최대한 피해갔으면 하는 마음에 정리를 시작한다.
